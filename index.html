@@ -53,6 +53,34 @@
   new WOW().init();
 </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all nav links
+    $(".nav-link").on('click', function(event) {
+
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });
+  </script>
+
 </head>
 
 <body>
@@ -122,13 +150,13 @@
     <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
 
       <!-- Content -->
-      <div class="container mt-5">
+      <div class="container">
 
         <!--Grid row-->
         <div class="row wow fadeIn">
 
           <!--Grid column-->
-          <div class="col-md-6 mb-4 white-text text-center text-md-left">
+          <div class="col-md-6 white-text text-center text-md-left mt-5">
 
             <h1 class="display-4 font-weight-bold">Would you like student debt relief?</h1>
 
@@ -150,7 +178,7 @@
           <!--Grid column-->
 
           <!--Grid column-->
-          <div class="col-md-6 col-xl-5 mb-4">
+          <div class="col-md-6 col-xl-5 mt-5">
 
             <!--Card-->
             <div class="card">
@@ -298,13 +326,13 @@
       <!--Section: Why-->
       <section id="why" class="mt-5 wow fadeIn">
 
-        <h1 class="h1 text-center mb-5 font-weight-bold">Why we do it</h1>
+        <h1 class="h1 text-center font-weight-bold mb-4">Why we do it</h1>
 
         <!--Grid row-->
         <div class="row wow fadeIn">
 
           <!--Grid column-->
-          <div class="col-lg-6 col-md-12 px-4">
+          <div class="col-lg-6 col-md-12 px-4 mt-4">
 
             <!--First row-->
             <div class="row">
@@ -353,7 +381,7 @@
           <!--/Grid column-->
 
           <!--Grid column-->
-          <div class="col-lg-6 col-md-12">
+          <div class="col-lg-6 col-md-12 mt-4">
 
             <p class="h5 text-center mb-3">Watch and learn</p>
             <div class="embed-responsive embed-responsive-16by9">
@@ -373,13 +401,13 @@
       <!--Section: Facts-->
       <section id="facts">
 
-        <h1 class="h1 text-center my-5 font-weight-bold">Did you know:</h1>
+        <h1 class="h1 text-center mt-5 mb-1 font-weight-bold">Did you know:</h1>
 
         <!--First row-->
-        <div class="row features-small mb-5 mt-3 wow fadeIn">
+        <div class="row features-small mb-4 mt-3 wow fadeIn">
 
           <!--First column-->
-          <div class="col-lg-4 col-md-7 ml-5">
+          <div class="col-xl-4 col-lg-7 col-md-8 ml-5 mt-5">
             <!--First row-->
             <div class="row">
               <div class="col-2">
@@ -505,13 +533,13 @@
           <!--/First column-->
 
           <!--Second column-->
-          <div class="col-lg-2 col-md-3 ml-4 mr-5 mb-3 flex-center">
-            <img src="./img/pineapple-watercolor-minimalist-painting-joanna-szmerdt.jpg" alt="Pineapple" class="z-depth-0 img-fluid">
+          <div class="col-xl-2 col-lg-auto col-md-2 ml-4 mr-5 mb-3 mt-2 flex-center">
+            <img src="./img/pineapple-watercolor-minimalist-painting-joanna-szmerdt.jpg" alt="Pineapple" style="width: 175px; height: auto;">
           </div>
           <!--/Second column-->
 
           <!--Third column-->
-          <div class="col-lg-4 col-md-7 mt-2 ml-5">
+          <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 ml-5 mt-5">
             <!--First row-->
             <div class="row">
               <div class="col-2">
@@ -697,24 +725,6 @@
 
   </footer>
   <!--/.Footer-->
-
-  <!-- Smooth scroll -->
-  <script>
-      let anchorlinks = document.querySelectorAll('a[href^="#"]')
-
-      for (let item of anchorlinks) { // relitere 
-          item.addEventListener('click', (e)=> {
-              let hashval = item.getAttribute('href')
-              let target = document.querySelector(hashval)
-              target.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-              })
-              history.pushState(null, null, hashval)
-              e.preventDefault()
-          })
-      }
-    </script>
 
 <!-- SCRIPTS -->
   <!-- JQuery -->
